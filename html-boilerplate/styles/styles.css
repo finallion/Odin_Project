@@ -1,0 +1,83 @@
+/* Specifity, choosen on conflict */
+/*
+1. ID
+2. Class
+3. Type
+ */
+
+/* Inheritance */
+/*
+typography based properties are inherited (mostly).
+Directly targeting an element with a property overwrites inheritance.
+ */
+
+/* universal selector */
+* {
+    color: purple;
+}
+
+/* type selector */
+div {
+    color: white;
+}
+
+/* class selector */
+.alert-text {
+    color: red;
+}
+
+/* id selector */
+#title {
+    background-color: red;
+}
+
+/* combined selector */
+.read,
+.unread {
+    color: white;
+    background-color: black;
+}
+
+/* chained (AND) selectpr */
+.subsection.header {
+    color: red;
+}
+
+.subsection#preview {
+    color: blue;
+}
+
+/* descendant combinator */
+/* contents is nested inside ancestors */
+.ancestor .contents {
+    /* some declarations */
+}
+
+
+/*
+************************
+Properties
+************************
+ */
+
+p {
+    /* hex example: */
+    color: #1100ff;
+    /* rgb example: */
+    color: rgb(100, 0, 127);
+    /* hsl example: */
+    color: hsl(15, 82%, 56%);
+}
+
+body {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    font-weight: 700;
+    text-align: center;
+}
+
+img {
+    height: auto;
+    width: 500px;
+}
