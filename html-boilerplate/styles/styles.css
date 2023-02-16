@@ -47,11 +47,31 @@ div {
     color: blue;
 }
 
+
 /* descendant combinator */
 /* contents is nested inside ancestors */
 .ancestor .contents {
     /* some declarations */
 }
+
+
+/*
+padding:
+space between border of box and the content of the box
+affects width and height
+
+margin:
+space between border of box and other boxes
+the largest margin between two boxes is used
+
+border:
+adds space between margin and padding
+affects width and height
+
+box-sizing: border-box
+takes height and width and subtracts border and padding
+
+*/
 
 
 /*
@@ -80,4 +100,23 @@ body {
 img {
     height: auto;
     width: 500px;
+}
+
+div {
+    display: block;
+    display: inline;
+    display: flex;
+
+    /*
+    flex-grow
+    flex-shrink
+    flex-basis
+     */
+}
+
+.flex-container {
+    flex-direction: column;
+    justify-content: space-between; /* main axis alignment */
+    align-items: center; /* cross axis alignment */
+    gap: 8px;
 }
