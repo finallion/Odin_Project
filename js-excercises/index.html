@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper, Scissor</title>
+</head>
+<body>
+<script>
+    let win = Array("rock-scissor", "scissor-paper", "paper-rock");
+
+    function getComputerChoice() {
+        let choices = Array("Rock", "Paper", "Scissor");
+        return choices[Math.floor(Math.random() * choices.length)]
+    }
+
+    function round(playerSelection, computerSelection) {
+        let player = playerSelection.toLowerCase();
+        let computer = computerSelection.toLowerCase();
+
+        if (player === computer) {
+            return "Tie."
+        }
+
+        if (win.includes(player + "-" + computer)) {
+            return "Player wins."
+        } else {
+            return "Computer wins."
+        }
+    }
+
+    function game() {
+        for (let i = 1; i <= 5; i++) {
+            console.log("Round: " + i)
+            let player = prompt();
+            let computer = getComputerChoice();
+
+            if (player === "") player = "Rock";
+
+            console.log("Player: " + player + " against " + computer)
+            console.log(round(player, computer))
+        }
+    }
+
+    game();
+</script>
+<!--
+<script>
+    function add7(number) {
+        return number + 7;
+    }
+
+    function multiply(one, two) {
+        return one * two;
+    }
+
+    function capitalize(text) {
+        return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    function lastLetter(text) {
+        return text.charAt(text.length - 1);
+    }
+
+    alert(add7(7));
+    alert(multiply(3, 4));
+    alert(capitalize("lowercase"));
+    alert(capitalize("UPPERCASE"));
+    alert(capitalize("bOtH"));
+    alert(lastLetter("lastLetter"))
+</script>
+-->
+
+</body>
+</html>
