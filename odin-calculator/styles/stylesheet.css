@@ -1,0 +1,25 @@
+button {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+#view {
+    display: flex;
+    flex-direction: row;
+}
+
+.empty-field {
+    border: 2px gray solid;
+    height: 50px;
+    width: 36.7%;
+    margin: 10px;
+    font-size: 28px;
+    padding-left: 20px;
+    padding-top: 13px;
+}
+
+#input-div {
+    display: flex;
+    flex-direction: row;
+}
