@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+.cell {
+    border: 2px solid lightblue;
+    width: 750px;
+    height: 50px;
+}
+
+button {
+    margin-left: 2px;
+}
+
+input {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
