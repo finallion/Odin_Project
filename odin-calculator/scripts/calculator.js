@@ -37,16 +37,12 @@ function generateOperatorButtons() {
                 break;
             case 4:
                 button.textContent = "=";
+                button.setAttribute("id", "equals-button");
                 break;
         }
 
-        if (i === 4) {
-            button.addEventListener("click", operate);
-            button.setAttribute("id", "equals-button");
-        } else {
-            button.addEventListener("click", addNumberToInput);
-            button.addEventListener("click", operate);
-        }
+        button.addEventListener("click", addNumberToInput);
+        button.addEventListener("click", operate);
         div.appendChild(button);
     }
 }
@@ -59,16 +55,16 @@ function checkOperator(valOne, valTwo, operator) {
     let result = "";
     switch (operator) {
         case "+":
-            result = add(valOne, valTwo);
+            result = valOne + valTwo;
             break;
         case "-":
-            result = subtract(valOne, valTwo);
+            result = valOne - valTwo;
             break;
         case "*":
-            result = multiply(valOne, valTwo);
+            result = valOne * valTwo;
             break;
         case ":":
-            result = divide(valOne, valTwo);
+            result = valOne / valTwo;
             break;
     }
     return result;
@@ -79,9 +75,9 @@ function operate(e) {
     let valTwo = parseInt(inputField.textContent.split(/[+\-*:=]/)[1])
     let operator = inputField.textContent.match(/[+\-*:=]/)[0];
     if (e.currentTarget.id === "equals-button") {
-        if (validate(valOne, valTwo, operator)) {
+        if (validate(valOne, valTwo, operator)) { // check if input format is correct
             res.textContent = checkOperator(valOne, valTwo, operator);
-            validateResult(res.textContent);
+            validateResult(res.textContent); // check for infinity when dividing by 0
         } else {
             alert("Wrong input format.")
         }
@@ -103,22 +99,6 @@ function validateResult(input) {
 
 function validate(one, two, operator) {
     return regex.test(one + "" + operator + "" + two)
-}
-
-function add(one, two) {
-    return one + two;
-}
-
-function subtract(one, two) {
-    return one - two;
-}
-
-function multiply(one, two) {
-    return one * two;
-}
-
-function divide(one, two) {
-    return one / two;
 }
 
 function reset() {
